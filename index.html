@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Lời mời 14/3 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Playfair+Display:wght@500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+<style>
+
+/* hoa hồng theo chuột */
+
+.mouse-rose{
+position:fixed;
+font-size:22px;
+pointer-events:none;
+animation:roseFloat 1.5s forwards;
+z-index:999;
+}
+
+@keyframes roseFloat{
+0%{
+transform:scale(0.6);
+opacity:1;
+}
+100%{
+transform:translateY(-80px) scale(1.2);
+opacity:0;
+}
+}
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ffd1dc,#ffe6f0,#fff0f5);
+height:100vh;
+overflow:hidden;
+color:#5a3e46;
+}
+
+/* sparkle */
+
+.sparkle{
+position:fixed;
+width:6px;
+height:6px;
+background:white;
+border-radius:50%;
+animation:sparkle 3s infinite;
+}
+
+@keyframes sparkle{
+0%{transform:scale(0)}
+50%{transform:scale(1.5)}
+100%{transform:scale(0)}
+}
+
+/* roses */
+
+.rose{
+position:fixed;
+top:-50px;
+font-size:24px;
+pointer-events:none;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-50px) rotate(0deg);
+opacity:1;
+}
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+}
+
+/* hearts */
+
+.heart{
+position:fixed;
+font-size:22px;
+animation:heartExplode 2s forwards;
+pointer-events:none;
+}
+
+@keyframes heartExplode{
+0%{
+transform:scale(0.5);
+opacity:1;
+}
+100%{
+transform:translateY(-200px) scale(1.5);
+opacity:0;
+}
+}
+
+/* page */
+
+.page{
+position:absolute;
+width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+transition:0.8s;
+}
+
+.hidden{
+opacity:0;
+pointer-events:none;
+transform:translateY(40px);
+}
+
+/* card */
+
+.card{
+backdrop-filter:blur(14px);
+background:rgba(255,255,255,0.65);
+padding:45px;
+border-radius:25px;
+box-shadow:0 20px 50px rgba(0,0,0,0.15);
+text-align:center;
+max-width:600px;
+}
+
+h1{
+font-family:'Playfair Display';
+color:#c94f7c;
+}
+
+h2{
+font-family:'Dancing Script';
+font-size:32px;
+color:#d6336c;
+}
+
+/* buttons */
+
+button{
+padding:13px 28px;
+margin:12px;
+border:none;
+border-radius:12px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.yes{
+background:linear-gradient(135deg,#ff4d6d,#ff7a9c);
+color:white;
+}
+
+.no{
+background:#ddd;
+}
+
+.next{
+background:#6c5ce7;
+color:white;
+}
+
+/* timeline */
+
+.timeline{
+display:flex;
+align-items:center;
+gap:40px;
+}
+
+.timeline-container{
+position:relative;
+padding-left:40px;
+}
+
+.timeline-container::before{
+content:"";
+position:absolute;
+left:10px;
+top:0;
+width:4px;
+height:100%;
+background:#ffc0cb;
+}
+
+.timeline-box{
+background:white;
+padding:18px;
+border-radius:15px;
+margin:15px 0;
+}
+
+/* dog */
+
+.dog{
+border-radius:20px;
+width:250px;
+animation:floatDog 4s infinite;
+}
+
+@keyframes floatDog{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+}
+
+/* photos */
+
+.photo-row{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.memory{
+width:160px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+transition:0.4s;
+}
+
+.memory:hover{
+transform:scale(1.08);
+}
+
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4c93d6cdd0.mp3">
+</audio>
+
+<!-- PAGE 1 -->
+
+<div class="page" id="page1">
+
+<div class="card">
+
+<h1>💌 Lời mời đặc biệt</h1>
+
+<p> Plan nho nhỏ cho thứ 7 tới nhó</p>
+
+<h2>Em đi ăn steak với anh nhé? ❤️</h2>
+
+<a href="https://www.facebook.com/ChamieSteak/" target="_blank">
+Chamie Steak
+</a>
+
+<br><br>
+
+<button class="yes" onclick="accept()">Em đồng ý 💖</button>
+<button class="no" id="noBtn">Để em suy nghĩ</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page hidden" id="page2">
+
+<div class="timeline">
+
+<div class="timeline-container">
+
+<h1>Timeline</h1>
+
+<div class="timeline-box">18:00 — Đón em 🚗</div>
+<div class="timeline-box">18:30 — Ăn tối 🍽</div>
+<div class="timeline-box">20:00 — Đi dạo 🌃</div>
+<div class="timeline-box">22:00 — Đưa em về 🌙</div>
+
+<button class="next" onclick="nextPage()">Tiếp ➜</button>
+
+</div>
+
+<img class="dog" src="anh-con-cho-26.jpg">
+
+</div>
+
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="page hidden" id="page3">
+
+<div class="card">
+
+<h1>Kết buổi tối 🌙</h1>
+
+<div class="photo-row">
+
+<img class="memory" src="https://images.unsplash.com/photo-1518199266791-5375a83190b7">
+<img class="memory" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2">
+<img class="memory" src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70">
+
+</div>
+
+<p>Cảm ơn Lan Anh đã dành thời gian đi với anh 💗</p>
+
+<p>Hy vọng buổi đi chơi sẽ giúp em thư giãn hơn.</p>
+
+<p>Nếu em muốn đổi địa điểm hoặc giờ thì anh chiều em nha 😉</p>
+
+</div>
+
+</div>
+
+<script>
+
+/* hoa hồng theo chuột */
+
+document.addEventListener("mousemove",function(e){
+
+let rose=document.createElement("div")
+rose.className="mouse-rose"
+
+let flowers=["🌹","🌸","💐","💮"]
+
+rose.innerHTML=flowers[Math.floor(Math.random()*flowers.length)]
+
+rose.style.left=e.clientX+"px"
+rose.style.top=e.clientY+"px"
+
+document.body.appendChild(rose)
+
+setTimeout(()=>{
+rose.remove()
+},1500)
+
+})
+
+/* sparkle */
+
+for(let i=0;i<25;i++){
+
+let s=document.createElement("div")
+
+s.className="sparkle"
+
+s.style.left=Math.random()*100+"vw"
+s.style.top=Math.random()*100+"vh"
+s.style.animationDelay=Math.random()*3+"s"
+
+document.body.appendChild(s)
+
+}
+
+/* hoa hồng rơi */
+
+function createRose(){
+
+let rose=document.createElement("div")
+
+rose.className="rose"
+
+rose.innerHTML="🌹"
+
+rose.style.left=Math.random()*100+"vw"
+
+rose.style.animationDuration=5+Math.random()*5+"s"
+
+document.body.appendChild(rose)
+
+setTimeout(()=>{
+rose.remove()
+},8000)
+
+}
+
+setInterval(createRose,700)
+
+/* heart explosion */
+
+function heartExplosion(){
+
+for(let i=0;i<20;i++){
+
+let heart=document.createElement("div")
+
+heart.className="heart"
+
+heart.innerHTML="💖"
+
+heart.style.left=50+Math.random()*20-10+"vw"
+heart.style.bottom="40vh"
+
+document.body.appendChild(heart)
+
+setTimeout(()=>{
+heart.remove()
+},2000)
+
+}
+
+}
+
+function accept(){
+
+heartExplosion()
+
+document.getElementById("page1").classList.add("hidden")
+
+setTimeout(()=>{
+document.getElementById("page2").classList.remove("hidden")
+},500)
+
+}
+
+function nextPage(){
+
+document.getElementById("page2").classList.add("hidden")
+
+setTimeout(()=>{
+document.getElementById("page3").classList.remove("hidden")
+},500)
+
+}
+
+/* nút chạy trốn */
+
+let noBtn=document.getElementById("noBtn")
+
+noBtn.addEventListener("mouseover",function(){
+
+this.style.position="absolute"
+
+this.style.left=Math.random()*80+"%"
+
+this.style.top=Math.random()*80+"%"
+
+})
+
+</script>
+
+</body>
+</html>
